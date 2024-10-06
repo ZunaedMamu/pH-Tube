@@ -57,10 +57,11 @@ const displayVideos =(videos) =>{
         const card = document.createElement("div");
         card.classList= "card card-compact";
         card.innerHTML =` 
-         <figure class="h-[200px] mb-2">
+         <figure class="h-[200px] mb-2 relative">
                 <img class="w-full h-full object-cover"
                 src=${video.thumbnail}
                 alt="Video" />
+                <span class="absolute bg-[#000000a8] text-gray-300 rounded-sm text-xs right-2 bottom-2 p-1">${"01:11"}</span>
             </figure>
             
            
@@ -71,7 +72,7 @@ const displayVideos =(videos) =>{
                <h2 class="card-title font-bold">${video.title}</h2>        
                 <div class="flex items-center gap-2">
                     <p>${video.authors[0].profile_name}</p> 
-                    <img class="w-5" src="https://img.icons8.com/?size=48&id=98A4yZTt9abw&format=png">
+                    ${video.authors[0].verified === true ?`<img class="w-5" src="https://img.icons8.com/?size=48&id=98A4yZTt9abw&format=png">`:" "}
                 </div>
                 <p>${video.others.views}</p>
                 </div>
